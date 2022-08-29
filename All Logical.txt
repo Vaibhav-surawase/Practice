@@ -1,0 +1,465 @@
+//1] Count No Of digits
+	public static int m1() 
+	{
+		   int num=123456;
+		   int count=0;
+		   while(num!=0)
+		   {
+		   num=num/10;
+		   count++;
+		   }
+		  return count;
+	}
+	public static void main(String[] a) 
+	{
+		System.out.println(m1());
+	}
+---------------------------------------------------------------------------------------------------------------------------------
+//2] Count EVEN_ODD No Of digits
+	int num=12345;
+	int oddc=0;
+	int ecount=0;
+	while(num>0)
+	{   
+		int rem=num%10;
+		if(rem%2==0)
+		{
+			ecount++;
+		}
+		else
+		{
+			oddc++;
+		}
+		num=num/10;
+	}
+	System.out.println(ecount);
+	System.out.println(oddc);
+----------------------------------------------------------------------------------------------------------------------------------	
+// 3  Palindrome Number
+		int num=12321;
+		int rev=0;
+		int or_num=num;
+		while(num!=0) 
+		{
+			rev=rev*10+num%10;   
+			num=num/10; 
+		}
+----------------------------------------------------------------------------------------------------------------------------------
+//4]	  Palindrome String 
+		String s="Ritesh", or_str=s;	
+		char a[]=s.toCharArray();
+//		String[] a=s.split("");
+		String rev="";
+		
+		for(int i=s.length()-1; i>=0; i-- )
+		{
+			rev=rev+a[i];
+		}
+		System.out.println(rev);
+		if (or_str.equalsIgnoreCase(rev))
+		{
+			System.out.println("Palindrome String");
+		}
+		else
+		{
+			System.out.println("Not A Palindrome String");
+		}
+----------------------------------------------------------------------------------------------------------------------------------
+//4]    Print the prime number--> 2 3 5 7 11 13 17 19
+       for (int j=1; j<=30; j++)
+       {
+    	   int count=0;
+    	   for (int i=1; i<=j; i++)
+		   {   
+			  if(j%i==0)
+			  {
+				  count++;
+			  }  
+		   }
+    	   if(count==2)
+		   {
+			 System.out.println(j);
+		   }
+		}--------------------------------------------------------------------
+	// 2 3 5 7 11
+ 
+      for (int i<2; i<=100; i++)
+     {  
+      int count=0;
+     for (int j=2; j<=i/2; j++)
+     {
+       if(i%j==0)
+     {
+       count++;
+     }
+      } 
+      if (count==0)
+     {
+       System.out.print(i+" ");
+     }
+----------------------------------------------------------------------------------------------------------------------------------
+// 5]   Check is it prime or not  
+//		2 3 5 7 11 13 17 19
+		int num=6, count=0;
+		if(num>1)
+		{
+			for (int i=1; i<=num; i++)
+			{
+				if(num%i==0)
+				{
+					count++; 
+				}	
+			}
+			if (count==2)
+			{
+				System.out.println(num+": is a Prime Number");
+			}
+			else
+			{
+				System.out.println(num+":is not a prime number");
+			}
+		}
+		else
+		{
+			System.out.println(num+":is not a prime number");
+		}     
+
+---------------------------------------------------------------------------------------------------------------------------------
+//6]  		 25 to 1 odd num 
+		for (int i=25; i>=0; i=i-2)
+		{
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		int num=1;
+		do
+		{
+			System.out.print(num+" ");
+			num=num+2;
+		}
+		while(num<=25);
+---------------------------------------------------------------------------------------------------------------------------------		
+//7]  Print & Odd_Even Char 
+		String s="Welcome";            // odd=>4    Even=>3
+		int Odd_Count=0;
+		int Even_Count=0;
+		for (int i=0; i<s.length(); i+=2)
+		{
+			Odd_Count++;
+			System.out.print(s.charAt(i)+" ");
+		}
+		System.out.println();
+		System.out.println("Odd_Count: "+Odd_Count);
+		for (int j=1; j<s.length(); j+=2)
+		{
+			Even_Count++;
+			System.out.print(s.charAt(j)+" ");
+		}
+		System.out.println();	
+
+		System.out.println("Even_Count: "+Even_Count);	
+--------------------------------------------------------------------------------------------------------------------------------
+//8] Occurance of char for Single Character 
+		char z='e';
+		int count=0;
+		String s="Welcome to Core Java";
+		for (int i=0; i<s.length(); i++)
+		{
+			if(z==s.charAt(i))
+			{
+				count++;
+			}
+		}
+		System.out.println(z+"= "+count);
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------
+//9]      Occurance of char
+		String s="WelcometoCoreJava";
+		HashMap<Character,Integer> hm=new  HashMap<Character,Integer>();
+		for (int i=0; i<s.length(); i++)
+		{
+			if(hm.containsKey(s.charAt(i)))
+			{
+				hm.put(s.charAt(i), hm.get(s.charAt(i))+1);
+			}
+			else
+			{
+		        hm.put(s.charAt(i), 1);
+			}
+		}
+		System.out.println(hm);
+	}	
+--------------------------------------------------------------------------------------------------------------------------------
+//10]		Anagram String
+		String a="race1";  
+		String b="care2";
+		a=a.toLowerCase();
+		b=b.toLowerCase();	
+		char c[]=a.toCharArray();
+		char d[]=b.toCharArray();
+		Arrays.sort(c);
+		Arrays.sort(d);
+		if (c.length==d.length)
+		{
+			if(Arrays.equals(c, d))
+			{
+				System.out.println("Given String is Anagram String");
+			}
+			else
+			{
+			System.out.println("Given String is not Anagram String");	
+			}
+		}
+		else
+		{
+		System.out.println("Given String is not Anagram String");	
+		}
+	}
+-----------------------------------------------------------------------------------------------------------------------------------
+//11]		Amstrong number   ------> // 153=1*1*1+5*5*5+3*3*3 
+		
+		int num=153, Or_num=num;
+		int rem=0;
+		int sum=0;
+		while(num>0)
+		{
+			rem=num%10;
+			sum = sum+rem*rem*rem;
+			num=num/10;
+		}
+		if(Or_num==sum)
+		{
+			System.out.println("Given num is Amstrong Number");
+		}
+		else
+		{
+			System.out.println("Given num is Not Amstrong Number");
+		}
+   }
+-----------------------------------------------------------------------------------------------------------------------------------
+//12] Replace and Extract from String
+		String s=" Hello Vaibhav 92557656576458^*&%^#";
+	    s=s.replaceAll("[A-z]","");
+	    s=s.replaceAll("[0-9]","");
+	    s=s.replaceAll(" ","");
+		System.out.println(s);
+	 
+------------------------------------------------------------------------------------------------------------------------------------	
+//13]   Number-1
+//		1 2 3 4 5
+//		6 7 8 9 10
+//		11 12 13 14 15
+//		16 17 18 19 20			          row= 4,   column=5
+		
+		for (int i=1; i<=4; i++)        
+		{
+			for (int j=1; j<=5; j++)     
+			{                          
+				System.out.print(5*i-5+j+" ");
+			}
+			System.out.println();
+		}
+------------------------------------------------------------------------------------------------------------------------------------
+//14]   Number-2
+
+----------------------------------------------------------------------------------------------------------------------------------
+//15]   Star-1/Rhombus-2
+//   * 
+//  * *
+// * * *
+//* * * *                row= 4,   column=1-4
+// * * *
+//  * *		
+//   *
+		for (int i=1; i<=4; i++)        
+		{
+			for (int s=3; s>=i; s--)
+			{
+				System.out.print(" ");
+			}
+			for (int j=1; j<=i; j++)     
+			{                          
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+		}-------------------------------------
+		for (int k=1; k<=3; k++)        
+		{
+			for (int s2=1; s2<=k; s2++)
+			{
+				System.out.print(" ");
+			}
+			for (int l=3; l>=k; l--)     
+			{                          
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+	     }
+}-----------------------------------------------------------------
+//15]   Star-1/Rhombus-2
+//   * 
+//  * *
+// * * *
+//* * * *                row=7,   column=1-4
+// * * *
+//  * *		
+//   *
+		for(int i=1; i<=7; i++)
+		{
+			if(i<=4)
+			{
+			  for(int sp=3;  sp>=i; sp--)
+			  {
+				  System.out.print(" ");
+			  }
+			  for (int st=1; st<=i; st++)
+			  {
+				  System.out.print("* ");
+			  }
+				System.out.println();
+			}
+			else
+			{
+				  for(int sp1=1;  sp1<=i-4; sp1++)
+				  {
+					  System.out.print(" ");
+				  }
+				  for (int st1=3; st1>=i-4; st1--)
+				  {
+					  System.out.print("* ");
+				  }
+					System.out.println();	
+			}	
+		}
+----------------------------------------------------------------------------------------------------------------------------------
+//16]   Pattern-3
+
+//A B C D E
+//A B C D E
+//A B C D E
+//A B C D E
+		
+		for (int i=1;i<=4;i++)
+		{
+			for(char j='A';j<='E'; j++)
+			{
+				System.out.print(j+" ");
+			}
+			System.out.println();
+		}--------------------------------
+		   Pattern-4
+	//  E E E E E 
+	//  D D D D D
+	//  C C C C C
+	//  B B B B B
+     
+        for (char i='E'; i>='B'; i--)
+        {
+        	for(int j=1;j<=5;j++)
+        	{
+        		System.out.print(i+" ");
+        	}
+        	System.out.println();
+        }
+----------------------------------------------------------------------------------------------------------------------------------
+//     17] Number Div by 3 && 5  		
+		for (int num=1; num<=25; num++)
+		{
+			if (num%3==0 && num%2==0)
+			{
+				System.out.print(num+" ");
+			}
+		}
+----------------------------------------------------------------------------------------------------------------------------------
+//     18] Logical Array-1 	  //  for 4X4 equal column
+		
+		  int[][] g= {{0,1,5,2},{3,4,6,7},{8,9,10,11},{12,12,14,15}};  //4X4 equal column
+		  System.out.println("g[i][j]=");
+		  for(int i=0; i<4; i++)
+	      {  
+	      for(int j=0; j<4; j++)
+	      {
+		  System.out.print(g[i][j]+" ");
+	      }
+	      System.out.println();
+----------------------------------------------------------------------------------------------------------------------------------
+//     19] Logical Array-2 		  //4X- unequal column
+          int[][] a= {{0,1,2},{3,4,5,6,7},{8,9,10,11},{12,12,14,15}};  //4X unequal column
+		//4X unequal column
+		  System.out.println("a[i][j]=");
+		  for(int i=0; i<4; i++)
+		  {	  
+		  for(int j=0; j<a[i].length; j++)
+		  {
+			  System.out.print(a[i][j]+" ");
+		  }
+		    System.out.println(); 
+----------------------------------------------------------------------------------------------------------------------------------
+//20]    Duplicate Value from Array with Count
+	 int a[]= {2,3,4,5,6,7,5,4,};    //--->4=2 times,   5=2times
+	 int count=0;
+	 for (int i=0; i<a.length; i++)
+	 {
+		 for(int j=i+1; j<a.length; j++)
+		 {
+	      if(a[i]==a[j])                //a[0]=2      a[j]=3, 4, 5, 6.....54
+	      {                             //a[2]=4          =4, 5 6    ....54
+			count++;
+			System.out.print(a[i]+" ");
+	      }
+	     }
+		 System.out.println();
+	 }
+	 System.out.println("Duplicate Count="+count);
+    }
+------------------------------------------------------------------------------------------------------------------------------------
+//21]   Average,Sum value of int array
+		int a[]= {1,2,3,4,5,6};
+		float sum=0;
+		for (int i=0; i<a.length; i++)
+		{
+			sum=sum+a[i];     
+		}
+		System.out.println("Size of Array="+(a.length));   //6
+		System.out.println("sum="+sum);                    //21
+		System.out.println("Avg="+sum/(a.length));         //3.5
+	}
+----------------------------------------------------------------------------------------------------------------------------------
+// 22]  String s="Azadi ka Amritmahotsav";
+        String revString="";
+        String[] words = s.split(" ");              //{idazA ak vastohamtirmA }
+        for (int i=0; i<words.length; i++)
+        {
+        	String revword="";
+        	String word = words[i];
+        	for (int j=word.length()-1; j>=0; j--)
+        	{
+        		revword=revword+word.charAt(j);
+        	}
+        	revString=revString+revword+" ";
+        }
+        System.out.print(revString);     
+	-------------------------------------------------------------------------------
+		String s="Azadi ka Amritmahotsav";     //Amritmahotsav ka Azadi 
+        String revString="";
+        String[] words = s.split(" ");
+        for (int i=words.length-1; i>=0; i--)
+        {
+        	revString=revString+words[i]+" ";
+        }
+        System.out.println(revString);
+------------------------------------------------------------------------------------------------------------------------------------
+   ***  Convert Num from String to int ----->
+		String int a=Integer.parseInt("123456");
+----------------------------------------------------------------------------------------------------------------------------------
+//  23]
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------
